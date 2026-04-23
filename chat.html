@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INARD | Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site-upgrades.css">
+    <link rel="icon" href="images/inard.png">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeSwitch" class="theme-btn">
+            <i class="fas fa-moon"></i>
+            <span>Modo Escuro</span>
+        </button>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <a href="index.html"><img src="images/inard.png" alt="INARD"></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> In&iacute;cio</a></li>
+                        <li><a href="quem-somos.html"><i class="fas fa-church"></i> Quem Somos</a></li>
+                        <li><a href="lideranca.html"><i class="fas fa-users"></i> Lideran&ccedil;a</a></li>
+                        <li><a href="congregacoes.html"><i class="fas fa-map-marker-alt"></i> Congrega&ccedil;&otilde;es</a></li>
+                        <li><a href="financas.html"><i class="fas fa-coins"></i> Finan&ccedil;as</a></li>
+                        <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                        <li><a href="tv-good-news.html"><i class="fas fa-tv"></i> TV</a></li>
+                        <li><a href="chat.html" class="active"><i class="fas fa-comments"></i> Chat</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="chat-hero-shell">
+        <div class="container">
+            <div class="chat-hero-content">
+                <span class="chat-eyebrow"><i class="fas fa-user-plus"></i> Pedido de acesso</span>
+                <h1>Chat da comunidade INARD</h1>
+                <p>Quem criar conta envia automaticamente um pedido para <strong>miguelquisamela@gmail.com</strong>. Depois disso, a pessoa j&aacute; entra numa sala comunit&aacute;ria com sincroniza&ccedil;&atilde;o online entre utilizadores ligados &agrave; internet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block" style="padding-top:0;">
+        <div class="container chat-shell">
+            <div class="chat-grid">
+                <article class="signup-card">
+                    <h3>Criar conta e pedir acesso</h3>
+                    <p class="form-help">Preencha os dados, envie o pedido e a administra&ccedil;&atilde;o poder&aacute; validar o acesso pelo email recebido.</p>
+                    <form id="chatAccessForm" class="form-stack">
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="nome">Nome completo</label>
+                                <input id="nome" name="nome" type="text" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="telefone">Telefone</label>
+                                <input id="telefone" name="telefone" type="text" required>
+                            </div>
+                            <div class="field">
+                                <label for="congregacao">Congrega&ccedil;&atilde;o</label>
+                                <select id="congregacao" name="congregacao" required>
+                                    <option value="Central">Central</option>
+                                    <option value="Talatona">Talatona</option>
+                                    <option value="Av&oacute; Kumbi">Av&oacute; Kumbi</option>
+                                    <option value="Zona Sul">Golf 2</option>
+                                    <option value="Zona Sul">Calemba</option>
+                                    <option value="Zona Sul">Benfica</option>
+                                    <option value="Zona Sul">Viana</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="funcao">Fun&ccedil;&atilde;o</label>
+                                <select id="funcao" name="funcao" required>
+                                    <option value="Membro">Membro</option>
+                                    <option value="Obreiro">Obreiro</option>
+                                    <option value="Di&aacute;cono">Di&aacute;cono</option>
+                                    <option value="Presb&iacute;tero">Presb&iacute;tero</option>
+                                    <option value="Pastor">Pastor</option>
+                                    <option value="Visitante">Visitante</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="motivo">Motivo do acesso</label>
+                                <input id="motivo" name="motivo" type="text" placeholder="Ex.: pedidos de ora&ccedil;&atilde;o e interac&ccedil;&atilde;o com a comunidade" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i> Pedir acesso e entrar</button>
+                    </form>
+                    <div id="chatAccessStatus" class="form-status"></div>
+                </article>
+
+                <aside class="chat-card">
+                    <h3>Como funciona</h3>
+                    <div class="community-pillars">
+                        <div>
+                            <strong>1. Cadastro</strong>
+                            <p class="text-muted">Os dados do pedido s&atilde;o enviados para o email do administrador.</p>
+                        </div>
+                        <div>
+                            <strong>2. Aprova&ccedil;&atilde;o</strong>
+                            <p class="text-muted">Voc&ecirc; analisa os pedidos e define quem ter&aacute; acesso oficial.</p>
+                        </div>
+                        <div>
+                            <strong>3. Comunidade</strong>
+                            <p class="text-muted">A nova p&aacute;gina do chat permite conversar, partilhar pedidos e interagir online em tempo real.</p>
+                        </div>
+                    </div>
+                    <ul class="community-list" style="margin-top:1.25rem;">
+                        <li><i class="fas fa-shield-heart"></i><span>Estrutura preparada para um fluxo mais organizado de entrada.</span></li>
+                        <li><i class="fas fa-envelope"></i><span>Email alvo configurado: miguelquisamela@gmail.com.</span></li>
+                        <li><i class="fas fa-comments"></i><span>Nova sala criada em <code>chat-sala.html</code>.</span></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="images/inard.png" alt="INARD">
+                    <p>Canal de interac&ccedil;&atilde;o da comunidade INARD para pedidos, testemunhos e comunica&ccedil;&atilde;o.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navega&ccedil;&atilde;o</h4>
+                    <ul>
+                        <li><a href="chat-sala.html">Sala da Comunidade</a></li>
+                        <li><a href="tv-good-news.html">TV Good News</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="financas.html">Finan&ccedil;as</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> miguelquisamela@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +244 937 692 309</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Luanda, Angola</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 INARD - Catedral das Na&ccedil;&otilde;es</p>
+                <p>Desenvolvido por Engenheiro Miguel Quisamela</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site-upgrades.js"></script>
+</body>
+</html>

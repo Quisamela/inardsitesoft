@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INARD | Galeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site-upgrades.css">
+    <link rel="icon" href="images/inard.png">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeSwitch" class="theme-btn">
+            <i class="fas fa-moon"></i>
+            <span>Modo Escuro</span>
+        </button>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <a href="index.html"><img src="images/inard.png" alt="INARD"></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> In&iacute;cio</a></li>
+                        <li><a href="quem-somos.html"><i class="fas fa-church"></i> Quem Somos</a></li>
+                        <li><a href="lideranca.html"><i class="fas fa-users"></i> Lideran&ccedil;a</a></li>
+                        <li><a href="congregacoes.html"><i class="fas fa-map-marker-alt"></i> Congrega&ccedil;&otilde;es</a></li>
+                        <li><a href="financas.html"><i class="fas fa-coins"></i> Finan&ccedil;as</a></li>
+                        <li><a href="galeria.html" class="active"><i class="fas fa-images"></i> Galeria</a></li>
+                        <li><a href="tv-good-news.html"><i class="fas fa-tv"></i> TV</a></li>
+                        <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero" style="background:linear-gradient(135deg, rgba(8, 15, 24, 0.88), rgba(31, 57, 86, 0.75)), url('images/culto3.jpg') center/cover;">
+        <div class="container">
+            <div class="page-hero-content">
+                <span class="page-eyebrow"><i class="fas fa-camera-retro"></i> Mem&oacute;ria visual da casa</span>
+                <h1>Galeria din&acirc;mica e alinhada</h1>
+                <p>Reorganizei a galeria para ficar mais limpa, com muitas fotos bem estruturadas, filtro por categoria e visual em mosaico para valorizar os registos do minist&eacute;rio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block">
+        <div class="container">
+            <div class="auto-carousel gallery-slideshow-hero" data-auto-carousel data-interval="3200">
+                <div class="carousel-viewport" style="height:100%;">
+                    <div class="carousel-track" style="height:100%;">
+                        <article class="carousel-slide">
+                            <img src="images/culto2.jpg" alt="Culto especial">
+                        </article>
+                        <article class="carousel-slide">
+                            <img src="images/evangelho1.jpg" alt="Evangeliza&ccedil;&atilde;o">
+                        </article>
+                        <article class="carousel-slide">
+                            <img src="images/accaosocial1.jpg" alt="Ac&ccedil;&atilde;o social">
+                        </article>
+                        <article class="carousel-slide">
+                            <img src="images/formacao0.jpg" alt="Treinamento">
+                        </article>
+                        <article class="carousel-slide">
+                            <img src="images/mulheres.jpg" alt="Mulheres">
+                        </article>
+                    </div>
+                </div>
+                <div class="gallery-slideshow-copy">
+                    <h3>Momentos que contam a hist&oacute;ria da casa</h3>
+                    <p>Agora a galeria tamb&eacute;m muda automaticamente em slides para mostrar a riqueza visual do minist&eacute;rio.</p>
+                    <div class="carousel-controls" style="margin-top:1.2rem;">
+                        <div class="carousel-dots">
+                            <button class="carousel-dot active" type="button"></button>
+                            <button class="carousel-dot" type="button"></button>
+                            <button class="carousel-dot" type="button"></button>
+                            <button class="carousel-dot" type="button"></button>
+                            <button class="carousel-dot" type="button"></button>
+                        </div>
+                        <div class="carousel-buttons">
+                            <button class="carousel-btn" type="button" data-carousel-prev><i class="fas fa-chevron-left"></i></button>
+                            <button class="carousel-btn" type="button" data-carousel-next><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-toolbar">
+                <button class="gallery-filter-btn active" data-filter="all">Todas</button>
+                <button class="gallery-filter-btn" data-filter="culto">Cultos</button>
+                <button class="gallery-filter-btn" data-filter="evangelismo">Evangelismo</button>
+                <button class="gallery-filter-btn" data-filter="social">Ac&ccedil;&atilde;o social</button>
+                <button class="gallery-filter-btn" data-filter="formacao">Treinamentos</button>
+                <button class="gallery-filter-btn" data-filter="familia">Mulheres e Infantil</button>
+            </div>
+
+            <div class="gallery-grid-upgraded" data-gallery-grid>
+                <article class="gallery-card-upgraded" data-category="culto" data-title="Culto de adora&ccedil;&atilde;o">
+                    <img src="images/culto0.jpg" alt="Culto de adora&ccedil;&atilde;o">
+                    <div class="gallery-overlay"><strong>Culto de adora&ccedil;&atilde;o</strong><span>Altar</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="culto" data-title="Ambiente de adora&ccedil;&atilde;o">
+                    <img src="images/culto1.jpg" alt="Ambiente de adora&ccedil;&atilde;o">
+                    <div class="gallery-overlay"><strong>Ambiente de adora&ccedil;&atilde;o</strong><span>Culto</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="evangelismo" data-title="Sa&iacute;da evangel&iacute;stica">
+                    <img src="images/evangelho1.jpg" alt="Sa&iacute;da evangel&iacute;stica">
+                    <div class="gallery-overlay"><strong>Sa&iacute;da evangel&iacute;stica</strong><span>Evangelismo</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="evangelismo" data-title="Miss&atilde;o nas ruas">
+                    <img src="images/evangelho3.jpg" alt="Miss&atilde;o nas ruas">
+                    <div class="gallery-overlay"><strong>Miss&atilde;o nas ruas</strong><span>Evangelismo</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="social" data-title="A&ccedil;&atilde;o social">
+                    <img src="images/accaosocial.jpg" alt="A&ccedil;&atilde;o social">
+                    <div class="gallery-overlay"><strong>A&ccedil;&atilde;o social</strong><span>Compaix&atilde;o</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="social" data-title="Apoio comunit&aacute;rio">
+                    <img src="images/accaosocial1.jpg" alt="Apoio comunit&aacute;rio">
+                    <div class="gallery-overlay"><strong>Apoio comunit&aacute;rio</strong><span>Social</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="formacao" data-title="Treinamento de obreiros">
+                    <img src="images/formacao0.jpg" alt="Treinamento de obreiros">
+                    <div class="gallery-overlay"><strong>Treinamento de obreiros</strong><span>Forma&ccedil;&atilde;o</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="formacao" data-title="Turma em forma&ccedil;&atilde;o">
+                    <img src="images/turma.jpg" alt="Turma em forma&ccedil;&atilde;o">
+                    <div class="gallery-overlay"><strong>Turma em forma&ccedil;&atilde;o</strong><span>Treinamento</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="familia" data-title="Minist&eacute;rio de mulheres">
+                    <img src="images/mulheres.jpg" alt="Minist&eacute;rio de mulheres">
+                    <div class="gallery-overlay"><strong>Mulheres</strong><span>Fam&iacute;lia</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="familia" data-title="Coral de m&atilde;es">
+                    <img src="images/coralmamas.jpg" alt="Coral de m&atilde;es">
+                    <div class="gallery-overlay"><strong>Coral de m&atilde;es</strong><span>Mulheres</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="familia" data-title="Minist&eacute;rio infantil">
+                    <img src="images/cultoebd.jpg" alt="Minist&eacute;rio infantil">
+                    <div class="gallery-overlay"><strong>Infantil</strong><span>Crian&ccedil;as</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="culto" data-title="Consagra&ccedil;&atilde;o no monte">
+                    <img src="images/monte0.jpg" alt="Consagra&ccedil;&atilde;o no monte">
+                    <div class="gallery-overlay"><strong>Consagra&ccedil;&atilde;o</strong><span>Busca</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="culto" data-title="Consagra&ccedil;&atilde;o ministerial">
+                    <img src="images/consagracao0.jpg" alt="Consagra&ccedil;&atilde;o ministerial">
+                    <div class="gallery-overlay"><strong>Consagra&ccedil;&atilde;o ministerial</strong><span>Altar</span></div>
+                </article>
+                <article class="gallery-card-upgraded" data-category="culto" data-title="Obras e melhorias">
+                    <img src="images/construcao2.jpg" alt="Obras e melhorias">
+                    <div class="gallery-overlay"><strong>Obras</strong><span>Estrutura</span></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="siteLightbox">
+        <button class="lightbox-close" id="siteLightboxClose" type="button">&times;</button>
+        <div class="lightbox-frame">
+            <img id="siteLightboxImage" src="" alt="">
+            <div class="lightbox-caption" id="siteLightboxCaption"></div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="images/inard.png" alt="INARD">
+                    <p>Galeria oficial da Catedral das Na&ccedil;&otilde;es com registos de cultos, miss&otilde;es e actividades.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navega&ccedil;&atilde;o</h4>
+                    <ul>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="lideranca.html">Lideran&ccedil;a</a></li>
+                        <li><a href="tv-good-news.html">TV Good News</a></li>
+                        <li><a href="chat.html">Chat INARD</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +244 937 692 309</p>
+                    <p><i class="fas fa-envelope"></i> apostoloantoniocorreia30@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Luanda, Angola</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 INARD - Catedral das Na&ccedil;&otilde;es</p>
+                <p>Desenvolvido por Engenheiro Miguel Quisamela</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site-upgrades.js"></script>
+</body>
+</html>

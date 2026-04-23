@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Slider - Fundo Dinâmico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section com Slider */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Container do Slider */
+        .slider-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Cada slide individual */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 1;
+        }
+
+        /* Slide ativo */
+        .slide.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* Overlay escuro para melhor legibilidade do texto */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(4, 13, 22, 0.7) 0%, rgba(1, 2, 3, 0.8) 100%);
+            z-index: 3;
+        }
+
+        /* Conteúdo do Hero */
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff6b6b;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        /* Indicadores do slider */
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 4;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .dot:hover {
+            background: rgba(255,255,255,0.8);
+            transform: scale(1.1);
+        }
+
+        /* Botões de navegação */
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        .nav-btn {
+            background: rgba(255,255,255,0.3);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: all 0.3s ease;
+            font-size: 24px;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.5);
+            transform: scale(1.1);
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .nav-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <!-- Container do Slider -->
+        <div class="slider-container" id="sliderContainer">
+            <!-- Os slides serão inseridos dinamicamente via JavaScript -->
+        </div>
+        
+        <!-- Overlay escuro -->
+        <div class="overlay"></div>
+        
+        <!-- Conteúdo -->
+        <div class="hero-content">
+            <h1>Bem-vindo ao Nosso Mundo</h1>
+            <p>Descubra uma experiência única e inspiradora</p>
+            <a href="#" class="btn">Explorar Agora</a>
+        </div>
+        
+        <!-- Indicadores -->
+        <div class="slider-dots" id="sliderDots"></div>
+        
+        <!-- Botões de navegação -->
+        <div class="slider-nav">
+            <div class="nav-btn" id="prevBtn">‹</div>
+            <div class="nav-btn" id="nextBtn">›</div>
+        </div>
+    </section>
+
+    <script>
+        // Lista de imagens para o slider
+        const images = [
+            'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1920&h=1080&fit=crop',
+            'https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?w=1920&h=1080&fit=crop'
+        ];
+        
+        // Array para armazenar os elementos do slide
+        let slides = [];
+        let currentIndex = 0;
+        let intervalId = null;
+        let isTransitioning = false;
+        
+        // Criar os slides dinamicamente
+        function createSlides() {
+            const container = document.getElementById('sliderContainer');
+            container.innerHTML = '';
+            slides = [];
+            
+            images.forEach((image, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'slide';
+                if (index === 0) slide.classList.add('active');
+                slide.style.backgroundImage = `url('${image}')`;
+                container.appendChild(slide);
+                slides.push(slide);
+            });
+        }
+        
+        // Criar os indicadores (dots)
+        function createDots() {
+            const dotsContainer = document.getElementById('sliderDots');
+            dotsContainer.innerHTML = '';
+            
+            images.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'dot';
+                if (index === currentIndex) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+        }
+        
+        // Atualizar os dots
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Função principal para trocar de slide
+        function changeSlide(newIndex) {
+            if (isTransitioning) return;
+            if (newIndex === currentIndex) return;
+            if (newIndex < 0) newIndex = slides.length - 1;
+            if (newIndex >= slides.length) newIndex = 0;
+            
+            isTransitioning = true;
+            
+            // Remover classe active do slide atual
+            slides[currentIndex].classList.remove('active');
+            
+            // Adicionar classe active ao novo slide
+            slides[newIndex].classList.add('active');
+            
+            // Atualizar índice atual
+            currentIndex = newIndex;
+            
+            // Atualizar dots
+            updateDots();
+            
+            // Resetar o timer após transição manual
+            resetTimer();
+            
+            // Liberar transição após completar
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 1500);
+        }
+        
+        // Próximo slide
+        function nextSlide() {
+            changeSlide(currentIndex + 1);
+        }
+        
+        // Slide anterior
+        function prevSlide() {
+            changeSlide(currentIndex - 1);
+        }
+        
+        // Ir para slide específico
+        function goToSlide(index) {
+            changeSlide(index);
+        }
+        
+        // Iniciar rotação automática
+        function startAutoSlide() {
+            if (intervalId) clearInterval(intervalId);
+            intervalId = setInterval(() => {
+                if (!isTransitioning) {
+                    nextSlide();
+                }
+            }, 5000); // Troca a cada 5 segundos
+        }
+        
+        // Resetar o timer
+        function resetTimer() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                startAutoSlide();
+            }
+        }
+        
+        // Inicializar o slider
+        function initSlider() {
+            createSlides();
+            createDots();
+            startAutoSlide();
+            
+            // Event listeners para os botões
+            document.getElementById('prevBtn').addEventListener('click', prevSlide);
+            document.getElementById('nextBtn').addEventListener('click', nextSlide);
+            
+            // Pausar animação ao passar o mouse
+            const heroSection = document.querySelector('.hero');
+            heroSection.addEventListener('mouseenter', () => {
+                if (intervalId) clearInterval(intervalId);
+            });
+            
+            heroSection.addEventListener('mouseleave', () => {
+                startAutoSlide();
+            });
+        }
+        
+        // Iniciar quando a página carregar
+        window.addEventListener('DOMContentLoaded', initSlider);
+        
+        // Pré-carregar imagens para evitar flickering
+        function preloadImages() {
+            images.forEach(image => {
+                const img = new Image();
+                img.src = image;
+            });
+        }
+        preloadImages();
+    </script>
+</body>
+</html>

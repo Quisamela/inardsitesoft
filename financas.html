@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INARD | Finan&ccedil;as</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/foot.css">
+    <Link rel="icon" href="images/inard.png">
+        
+    <style>
+        .finance-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #14263d 100%);
+            color: #fff;
+            padding: 4.5rem 0 3.5rem;
+        }
+
+        .finance-hero-content {
+            display: grid;
+            grid-template-columns: 1.25fr 0.95fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .finance-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--primary-gold-light);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .finance-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            margin-bottom: 1rem;
+            color: var(--primary-gold-light);
+        }
+
+        .finance-hero p {
+            max-width: 640px;
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .finance-summary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 1.5rem;
+            padding: 1.75rem;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+        }
+
+        .finance-summary h3 {
+            color: var(--primary-gold-light);
+            margin-bottom: 1rem;
+        }
+
+        .finance-summary ul {
+            list-style: none;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .finance-summary li {
+            display: flex;
+            gap: 0.8rem;
+            align-items: flex-start;
+        }
+
+        .finance-summary i {
+            color: var(--primary-gold);
+            margin-top: 0.2rem;
+        }
+
+        .finance-section {
+            padding: 4rem 0;
+        }
+
+        .finance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .finance-card,
+        .method-card,
+        .report-card,
+        .contact-card {
+            background: var(--white);
+            border-radius: 1.25rem;
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+        }
+
+        .finance-card i,
+        .method-card i,
+        .report-card i,
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--primary-gold);
+            margin-bottom: 1rem;
+        }
+
+        .finance-card h3,
+        .method-card h3,
+        .report-card h3,
+        .contact-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.85rem;
+        }
+
+        .finance-card p,
+        .method-card p,
+        .report-card p,
+        .contact-card p {
+            color: var(--gray-text);
+        }
+
+        .method-list,
+        .report-list {
+            list-style: none;
+            display: grid;
+            gap: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .method-list li,
+        .report-list li {
+            background: var(--light-bg);
+            border-left: 4px solid var(--primary-gold);
+            border-radius: 0.8rem;
+            padding: 0.9rem 1rem;
+        }
+
+        .finance-panel {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 1.5rem;
+        }
+
+        .contact-card a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-stack {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .finance-cta {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 900px) {
+            .finance-hero-content,
+            .finance-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .finance-hero {
+                padding: 3.5rem 0 2.8rem;
+            }
+
+            .finance-summary,
+            .finance-card,
+            .method-card,
+            .report-card,
+            .contact-card {
+                padding: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeSwitch" class="theme-btn">
+            <i class="fas fa-moon"></i>
+            <span>Modo Escuro</span>
+        </button>
+    </div>
+
+     <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <a href="index.html">
+                        <img src="images/inard.png" alt="INARD - Catedral das Nações" onerror="this.src='https://placehold.co/200x80?text=INARD'">
+                    </a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                        <li><a href="quem-somos.html"><i class="fas fa-church"></i> Quem Somos</a></li>
+                        <li><a href="lideranca.html"><i class="fas fa-users"></i> Liderança</a></li>
+                        <li><a href="congregacoes.html"><i class="fas fa-map-marker-alt"></i> Congregações</a></li>
+                        <li><a href="financas.html" class="active"><i class="fas fa-coins"></i> Finan&ccedil;as</a></li>
+                        <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="finance-hero">
+            <div class="container">
+                <div class="finance-hero-content">
+                    <div>
+                        <div class="finance-badge">
+                            <i class="fas fa-shield-heart"></i>
+                            <span>Gest&atilde;o com responsabilidade e transpar&ecirc;ncia</span>
+                        </div>
+                        <h1>Menu de Finan&ccedil;as</h1>
+                        <p>Esta &aacute;rea organiza informa&ccedil;&otilde;es sobre contribui&ccedil;&otilde;es, presta&ccedil;&atilde;o de contas e apoio aos projetos da igreja, fortalecendo a confian&ccedil;a e o compromisso com a obra.</p>
+                        <div class="finance-cta">
+                            <a href="#contribuicoes" class="btn btn-primary"><i class="fas fa-hand-holding-heart"></i> Como contribuir</a>
+                            <a href="#prestacao" class="btn btn-secondary"><i class="fas fa-file-invoice-dollar"></i> Ver transpar&ecirc;ncia</a>
+                        </div>
+                    </div>
+
+                    <aside class="finance-summary">
+                        <h3>Vis&atilde;o Financeira</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i><span>Contribui&ccedil;&otilde;es destinadas ao sustento ministerial, miss&otilde;es e a&ccedil;&otilde;es sociais.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Processos internos com acompanhamento administrativo e tesouraria.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Comunica&ccedil;&atilde;o clara para membros, parceiros e lideran&ccedil;a local.</span></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="finance-section">
+            <div class="container">
+                <h2 class="section-title">Princ&iacute;pios da Gest&atilde;o</h2>
+                <div class="finance-grid">
+                    <article class="finance-card">
+                        <i class="fas fa-scale-balanced"></i>
+                        <h3>Integridade</h3>
+                        <p>Cada recurso recebido deve ser administrado com seriedade, rever&ecirc;ncia e compromisso com a miss&atilde;o da igreja.</p>
+                    </article>
+                    <article class="finance-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Transpar&ecirc;ncia</h3>
+                        <p>Relat&oacute;rios resumidos, metas e frentes de investimento podem ser apresentados de forma acess&iacute;vel &agrave; comunidade.</p>
+                    </article>
+                    <article class="finance-card">
+                        <i class="fas fa-people-carry-box"></i>
+                        <h3>Impacto</h3>
+                        <p>As finan&ccedil;as servem ao altar, &agrave; evangeliza&ccedil;&atilde;o, ao cuidado social e &agrave; expans&atilde;o das congrega&ccedil;&otilde;es.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="finance-section highlights" id="contribuicoes">
+            <div class="container">
+                <h2 class="section-title">Formas de Contribui&ccedil;&atilde;o</h2>
+                <div class="finance-grid">
+                    <article class="method-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>D&iacute;zimos e Ofertas</h3>
+                        <p>Espa&ccedil;o para orientar os membros sobre fidelidade, gratid&atilde;o e apoio ao trabalho ministerial.</p>
+                        <ul class="method-list">
+                            <li>D&iacute;zimo regular para sustento da obra.</li>
+                            <li>Ofertas volunt&aacute;rias em cultos e eventos.</li>
+                            <li>Contribui&ccedil;&otilde;es especiais para campanhas.</li>
+                        </ul>
+                    </article>
+                    <article class="method-card">
+                        <i class="fas fa-building-columns"></i>
+                        <h3>Transfer&ecirc;ncia Banc&aacute;ria</h3>
+                        <p>Reserve este bloco para dados banc&aacute;rios oficiais, com confirma&ccedil;&atilde;o pela tesouraria e refer&ecirc;ncia da oferta.</p>
+                        <ul class="method-list">
+                            <li>Banco: BIC</li>
+                            <li>Conta: OO51 0000 6794 9546 10 13 8</li>
+                            <li>Refer&ecirc;ncia: António Alberto Correia</li>
+                        </ul>
+                    </article>
+                    <article class="method-card">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Projetos e Miss&otilde;es</h3>
+                        <p>Canalize ofertas para constru&ccedil;&atilde;o, a&ccedil;&atilde;o social, miss&otilde;es e outras frentes estrat&eacute;gicas da igreja.</p>
+                        <ul class="method-list">
+                            <li>Campanhas mission&aacute;rias.</li>
+                            <li>Apoio a fam&iacute;lias e assist&ecirc;ncia social.</li>
+                            <li>Melhorias estruturais e equipamentos.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="finance-section" id="prestacao">
+            <div class="container">
+                <h2 class="section-title">Presta&ccedil;&atilde;o e Contato</h2>
+                <div class="finance-panel">
+                    <article class="report-card">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Prestando Contas com Clareza</h3>
+                        <p>Use esta &aacute;rea para publicar resumos financeiros, prioridades do trimestre e resultados alcan&ccedil;ados com os recursos recebidos.</p>
+                        <ul class="report-list">
+                            <li>Resumo mensal de entradas e sa&iacute;das.</li>
+                            <li>Projetos em andamento e metas de arrecada&ccedil;&atilde;o.</li>
+                            <li>Testemunhos e impactos gerados pelas contribui&ccedil;&otilde;es.</li>
+                        </ul>
+                    </article>
+
+                    <article class="contact-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Fale com a Tesouraria</h3>
+                        <p>Disponibilize um canal direto para d&uacute;vidas, comprovativos e orienta&ccedil;&otilde;es sobre contribui&ccedil;&otilde;es.</p>
+                        <div class="contact-stack">
+                            <p><strong>Respons&aacute;vel:</strong> Secretaria Financeira INARD</p>
+                            <p><strong>Telefone:</strong> <a href="tel:+244937692309">+244 937 692 309</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:contato@inard.com">apostoloantoniocorreia30@gmail.com</a></p>
+                            <p><strong>Atendimento:</strong> Segunda a sexta, 9h &agrave;s 16h</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+
+            <!-- Logo e descrição -->
+            <div class="footer-info">
+                <img src="images/inard.png" alt="INARD" onerror="this.src='https://placehold.co/150x60?text=INARD'">
+                <p>Catedral das Nações - INARD</p>
+
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Links rápidos -->
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                   <li><a href="jogo.html">Quiz Bíblico - INARD</a></li>
+                    <li><a href="chat.html">Chat INARD</a></li> 
+                    <li><a href="lideranca.html">Liderança</a></li>
+                    <li><a href="financas.html">Finanças</a></li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> +244 937 692 309</p>
+                <p><i class="fas fa-phone"></i> +244 950 501 715</p>
+                <p><i class="fas fa-phone"></i> +244 942 253 452</p>
+                <p><i class="fas fa-envelope"></i> apostoloantoniocorreia30@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i>Kassequel - Rua 68, Luanda, Angola</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-newsletter">
+                <h4>Fique Conectado</h4>
+                <p>Receba novidades e mensagens inspiradoras.</p>
+                <form>
+                    <input type="email" placeholder="Seu email" required>
+                    <button type="submit">Subscrever</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Linha inferior -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 INARD - Catedral das Nações. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Engenheiro Miguel Quisamela</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

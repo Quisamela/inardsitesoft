@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INARD | Sala da Comunidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site-upgrades.css">
+    <link rel="icon" href="images/inard.png">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeSwitch" class="theme-btn">
+            <i class="fas fa-moon"></i>
+            <span>Modo Escuro</span>
+        </button>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <a href="index.html"><img src="images/inard.png" alt="INARD"></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> In&iacute;cio</a></li>
+                        <li><a href="quem-somos.html"><i class="fas fa-church"></i> Quem Somos</a></li>
+                        <li><a href="financas.html"><i class="fas fa-coins"></i> Finan&ccedil;as</a></li>
+                        <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                        <li><a href="tv-good-news.html"><i class="fas fa-tv"></i> TV</a></li>
+                        <li><a href="chat.html"><i class="fas fa-user-plus"></i> Cadastro</a></li>
+                        <li><a href="chat-sala.html" class="active"><i class="fas fa-comments"></i> Sala</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="chat-hero-shell">
+        <div class="container">
+            <div class="chat-hero-content">
+                <span class="chat-eyebrow"><i class="fas fa-users"></i> Interac&ccedil;&atilde;o da comunidade</span>
+                <span class="chat-eyebrow"><i class="fas fa-users"></i>Quiz INARD</span>
+                <h1>Sala da Comunidade</h1>
+                <p id="roomStatusBanner">Partilhe pedidos de ora&ccedil;&atilde;o, avisos e testemunhos num ambiente simples e acolhedor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block" style="padding-top:0;">
+        <div class="container room-shell" id="communityRoom">
+            <div class="room-grid">
+                <article class="room-card chat-board">
+                    <div class="room-header">
+                        <div>
+                            <div class="room-badge"><i class="fas fa-circle"></i> Sala Geral</div>
+                            <p class="text-muted" style="margin-top:0.6rem;">Mensagens sincronizadas online quando houver internet, com apoio de armazenamento local no navegador.</p>
+                        </div>
+                        <div>
+                            <strong id="communityProfileName">Visitante INARD</strong>
+                            <p class="text-muted" id="communityProfileMeta">Participante da comunidade</p>
+                        </div>
+                    </div>
+                    <div class="room-messages" id="communityMessages"></div>
+                    <form class="room-form" id="communityMessageForm">
+                        <div class="field">
+                            <label for="communityMessage">Escreva uma mensagem</label>
+                            <textarea id="communityMessage" placeholder="Escreva um pedido de ora&ccedil;&atilde;o, um testemunho ou uma palavra de encorajamento..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar mensagem</button>
+                    </form>
+                </article>
+
+                <aside class="room-card">
+                    <h3>Boas pr&aacute;ticas</h3>
+                    <ul class="community-list">
+                        <li><i class="fas fa-heart"></i><span>Use o espa&ccedil;o para ora&ccedil;&atilde;o, encorajamento e comunica&ccedil;&atilde;o saud&aacute;vel.</span></li>
+                        <li><i class="fas fa-hands-praying"></i><span>Evite discuss&otilde;es ofensivas ou mensagens fora do prop&oacute;sito da comunidade.</span></li>
+                        <li><i class="fas fa-user-check"></i><span>O perfil carregado vem dos dados preenchidos na p&aacute;gina de cadastro.</span></li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="images/inard.png" alt="INARD">
+                    <p>Sala de interac&ccedil;&atilde;o online da comunidade INARD.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navega&ccedil;&atilde;o</h4>
+                    <ul>
+                        <li><a href="chat.html">Cadastro do Chat</a></li>
+                        <li><a href="tv-good-news.html">TV Good News</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="financas.html">Finan&ccedil;as</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> miguelquisamela@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +244 937 692 309</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Luanda, Angola</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 INARD - Catedral das Na&ccedil;&otilde;es</p>
+                <p>Desenvolvido por Engenheiro Miguel Quisamela</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+    <script src="js/site-upgrades.js"></script>
+</body>
+</html>

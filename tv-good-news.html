@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INARD | TV Good News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site-upgrades.css">
+    <link rel="icon" href="images/inard.png">
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeSwitch" class="theme-btn">
+            <i class="fas fa-moon"></i>
+            <span>Modo Escuro</span>
+        </button>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <a href="index.html"><img src="images/inard.png" alt="INARD"></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> In&iacute;cio</a></li>
+                        <li><a href="quem-somos.html"><i class="fas fa-church"></i> Quem Somos</a></li>
+                        <li><a href="lideranca.html"><i class="fas fa-users"></i> Lideran&ccedil;a</a></li>
+                        <li><a href="congregacoes.html"><i class="fas fa-map-marker-alt"></i> Congrega&ccedil;&otilde;es</a></li>
+                        <li><a href="financas.html"><i class="fas fa-coins"></i> Finan&ccedil;as</a></li>
+                        <li><a href="galeria.html"><i class="fas fa-images"></i> Galeria</a></li>
+                        <li><a href="tv-good-news.html" class="active"><i class="fas fa-tv"></i> TV Good News</a></li>
+                        <li><a href="chat.html"><i class="fas fa-comments"></i> Chat</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="tv-hero-shell">
+        <div class="container">
+            <div class="tv-hero-content">
+                <span class="tv-eyebrow"><i class="fas fa-circle" style="color:#ff4d4d;"></i> TV e canal digital</span>
+                <h1>TV Good News</h1>
+                <p>O culto ao vivo agora aponta para o canal que voc&ecirc; enviou. A p&aacute;gina tenta carregar automaticamente os &uacute;ltimos v&iacute;deos e, se o YouTube limitar esse feed, usa a playlist autom&aacute;tica do canal como fallback.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block" style="padding-top:0;">
+        <div class="container">
+            <div class="tv-shell">
+                <div class="tv-player-card">
+                    <iframe id="tvMainPlayer" src="https://www.youtube.com/embed/videoseries?list=UUiwv7vM7ZkGpEejEOIH2iFw&autoplay=1&mute=1&rel=0" title="TV Good News" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <video id="tvLocalVideo" controls autoplay muted loop playsinline>
+                        <source src="images/pregacao.mp4" type="video/mp4">
+                    </video>
+                    <div class="tv-player-meta">
+                        <h3 id="tvCurrentTitle">Canal completo em reprodu&ccedil;&atilde;o autom&aacute;tica</h3>
+                        <p id="tvCurrentMeta">Ligado ao canal <a href="https://www.youtube.com/@antoniocorreiatvboasnovas2803" target="_blank" rel="noopener noreferrer" style="color:#ead18f;">@antoniocorreiatvboasnovas2803</a> e afinado com o ID oficial <code>UCiwv7vM7ZkGpEejEOIH2iFw</code>.</p>
+                        <div class="tv-actions">
+                            <a class="btn btn-primary" data-channel-link="videos"><i class="fas fa-video"></i> Ver mais</a>
+                            <a class="btn-outline-light" data-channel-link="subscribe"><i class="fab fa-youtube"></i> Inscrever-se</a>
+                            <a class="btn-outline-light" data-channel-link="streams"><i class="fas fa-broadcast-tower"></i> Lives</a>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="tv-sidebar">
+                    <div class="tv-card">
+                        <h3>&Uacute;ltimos v&iacute;deos</h3>
+                        <p class="channel-note">Clique numa miniatura para trocar o player. Se o feed do canal responder, esta lista aparece com os v&iacute;deos reais mais recentes.</p>
+                        <div class="tv-playlist" id="tvPlaylist"></div>
+                    </div>
+                    <div class="tv-card">
+                        <h3>Canal oficial</h3>
+                        <ul class="channel-points">
+                            <li><i class="fas fa-check-circle"></i><span>Canal ligado ao endere&ccedil;o informado: <a href="https://www.youtube.com/@antoniocorreiatvboasnovas2803" target="_blank" rel="noopener noreferrer">YouTube oficial</a>.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>Bot&otilde;es “Ver mais” e “Inscrever-se” redireccionam para o canal.</span></li>
+                            <li><i class="fas fa-check-circle"></i><span>O player principal j&aacute; inicia com autoplay e mute, como &eacute; exigido pelos navegadores modernos.</span></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block alt">
+        <div class="container">
+            <h2 class="section-title">Programa&ccedil;&atilde;o em destaque</h2>
+            <div class="schedule-grid">
+                <article class="schedule-card"><strong>Domingo</strong><p>Santa Ceia e culto de celebra&ccedil;&atilde;o</p></article>
+                <article class="schedule-card"><strong>Ter&ccedil;a</strong><p>Escola de Profetas e activa&ccedil;&atilde;o espiritual</p></article>
+                <article class="schedule-card"><strong>Quarta</strong><p>Ensino b&iacute;blico e fortalecimento da f&eacute;</p></article>
+                <article class="schedule-card"><strong>Sexta</strong><p>Culto de ora&ccedil;&atilde;o, cura e liberta&ccedil;&atilde;o</p></article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="images/inard.png" alt="INARD">
+                    <p>TV Good News: transmiss&otilde;es, ensino e mensagens para a igreja e para as na&ccedil;&otilde;es.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navega&ccedil;&atilde;o</h4>
+                    <ul>
+                        <li><a href="quem-somos.html">Quem Somos</a></li>
+                        <li><a href="galeria.html">Galeria</a></li>
+                        <li><a href="financas.html">Finan&ccedil;as</a></li>
+                        <li><a href="chat.html">Chat INARD</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +244 937 692 309</p>
+                    <p><i class="fas fa-envelope"></i> apostoloantoniocorreia30@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Luanda, Angola</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 INARD - Catedral das Na&ccedil;&otilde;es</p>
+                <p>Desenvolvido por Engenheiro Miguel Quisamela</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site-upgrades.js"></script>
+</body>
+</html>

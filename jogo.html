@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz Bíblico INARD — Antigo & Novo Testamento</title>
+  <link rel="stylesheet" href="css/jogo.css" />
+  <Link rel="icon" href="images/inard.png">
+  
+</head>
+<body>
+  <main class="app" id="app">
+    <header class="header">
+      <h1>Quiz Bíblico - INARD</h1>
+      <p class="subtitle">Testa os teus conhecimentos do Antigo e Novo Testamento</p>
+    </header>
+
+    <section class="setup" id="setup">
+      <div class="setup-row">
+        <label for="category">Escolher categoria</label>
+        <select id="category" aria-label="Categoria">
+          <option value="all">Ambos (Antigo & Novo)</option>
+          <option value="ot">Antigo Testamento</option>
+          <option value="nt">Novo Testamento</option>
+        </select>
+      </div>
+
+      <div class="setup-row">
+        <label for="numQ">Número de perguntas</label>
+        <input type="number" id="numQ" min="1" max="20" value="10" />
+      </div>
+
+      <div class="setup-row">
+        <label for="timer">Temporizador por pergunta (segundos, 0 = sem temporizador)</label>
+        <input type="number" id="timer" min="0" max="300" value="0" />
+      </div>
+
+      <div class="setup-actions">
+        <button id="startBtn" class="btn primary">Iniciar Quiz</button>
+      </div>
+    </section>
+
+    <section id="quiz" class="quiz hidden" aria-live="polite">
+      <div class="quiz-header">
+        <div class="meta">
+          <div>Categoria: <strong id="meta-category">-</strong></div>
+          <div>Pergunta <span id="current">0</span>/<span id="total">0</span></div>
+        </div>
+        <div class="score">Pontuação: <span id="score">0</span></div>
+      </div>
+
+      <div id="progress" class="progress" aria-hidden="false">
+        <div id="progress-bar" class="progress-bar" style="width:0%"></div>
+      </div>
+
+      <article class="question-card" id="questionCard">
+        <h2 id="questionText">—</h2>
+        <div id="choices" class="choices" role="list"></div>
+
+        <div class="controls">
+          <div class="timer" id="timerDisplay" hidden>
+            Tempo restante: <span id="timerCount">0</span>s
+          </div>
+          <button id="nextBtn" class="btn" disabled>Próxima</button>
+        </div>
+
+        <div id="explanation" class="explanation hidden" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <h2>Resultado</h2>
+      <p>Pontuação final: <strong id="finalScore">0</strong></p>
+      <p id="resultMsg"></p>
+      <div class="result-actions">
+        <button id="retryBtn" class="btn">Jogar de novo</button>
+        <button id="backBtn" class="btn">Voltar ao início</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Desenvolvido como app educativa — perguntas baseadas na Bíblia (Ex.: Antigo Testamento = OT; Novo Testamento = NT).</small>
+    </footer>
+  </main>
+
+  <script src="js/jogo.js" defer></script>
+</body>
+</html>
